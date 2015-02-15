@@ -6,3 +6,11 @@ data1
 
 plot(data1$Unix,data1$Sales,type="l",main="150W LED Light Bulb, 20W 1950 Lumens",xlab="Date",ylab="Sales")
 
+
+# Bulb number 2
+
+data2<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\data2.txt",header=TRUE,sep="\t")
+
+data2
+
+plot(data2$Unix,data2$Sales,type="l",main="Cree 18-Watt (100W) Daylight (5000K) LED A21",xlab="Date",ylab="Sales")
