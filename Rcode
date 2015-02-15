@@ -1,0 +1,8 @@
+# Bulb number 1
+
+data1<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\data1.txt",header=TRUE,sep="\t")
+
+data1
+
+plot(data1$Unix,data1$Sales,type="l",main="150W LED Light Bulb, 20W 1950 Lumens",xlab="Date",ylab="Sales")
+
