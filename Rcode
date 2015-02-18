@@ -1,6 +1,6 @@
 # Bulb number 1
 
-data1<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\data1.txt",header=TRUE,sep="\t")
+data1<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\datap1.txt",header=TRUE,sep="\t")
 
 data1
 
@@ -9,7 +9,7 @@ plot(data1$Unix,data1$Sales,type="l",main="150W LED Light Bulb, 20W 1950 Lumens"
 
 # Bulb number 2
 
-data2<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\data2.txt",header=TRUE,sep="\t")
+data2<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\datap2.txt",header=TRUE,sep="\t")
 
 data2
 
