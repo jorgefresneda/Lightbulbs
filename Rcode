@@ -125,3 +125,93 @@ data8
 
 plot(data8$Unix,data8$Sales,type="l",main="Triangle Bulbs (Pack Of 4) 9-Watt (60-Watt) A19, LED Light Bulb",xlab="Date",ylab="Sales")
 
+
+
+#Product 3
+
+data3<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\datap3.txt",header=TRUE,sep="\t")
+
+data3
+
+plot(data3$Unix,data3$Sales,type="l",main="Feit A/OM2200R/LED A19 Performance LED",xlab="Date",ylab="Sales")
+
+
+
+#Product 5
+
+data5<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\datap5.txt",header=TRUE,sep="\t")
+
+data5
+
+plot(data5$Unix,data5$Sales,type="l",main="SWITCH Lighting A23WY1FUS27A4-R Classic A21 LED",xlab="Date",ylab="Sales")
+
+
+
+#Product 6
+
+data6<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\datap6.txt",header=TRUE,sep="\t")
+
+data6
+
+plot(data6$Unix,data6$Sales,type="l",main="Philips 452722 9W (60-Watt) A19 Hue Lux",xlab="Date",ylab="Sales")
+
+
+
+#Product 7
+
+data7<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\datap7.txt",header=TRUE,sep="\t")
+
+data7
+
+plot(data7$Unix,data7$Sales,type="l",main="Sylvania 78884 - LED8A15C/DIM/827 A Line Pear LED",xlab="Date",ylab="Sales")
+
+
+
+#Product 9
+
+data9<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\datap9.txt",header=TRUE,sep="\t")
+
+data9
+
+plot(data9$Unix,data9$Sales,type="l",main="(6 Pack) Bulbrite 40A15F 40-Watt Incandescent A15",xlab="Date",ylab="Sales")
+
+
+
+#Product 11
+
+data11<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\datap11.txt",header=TRUE,sep="\t")
+
+data11
+
+plot(data11$Unix,data11$Sales,type="l",main="Bulbrite 40A/CB-12PK 40W Ceramic Blue",xlab="Date",ylab="Sales")
+
+
+
+#Product 14
+
+data14<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\datap14.txt",header=TRUE,sep="\t")
+
+data14
+
+plot(data14$Unix,data14$Sales,type="l",main="SYLVANIA 40-Watt A15 -Clear- Ceiling Fan Bulbs",xlab="Date",ylab="Sales")
+
+
+
+#Product 15
+
+data15<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\datap15.txt",header=TRUE,sep="\t")
+
+data15
+
+plot(data15$Unix,data15$Sales,type="l",main="GE Lighting 76579 Appliance 40-Watt",xlab="Date",ylab="Sales")
+
+
+
+#Product 16
+
+data16<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Lightbulbs\\datap16.txt",header=TRUE,sep="\t")
+
+data16
+
+plot(data16$Unix,data16$Sales,type="l",main="Sunlite 40A/R/2PK Incandescent 40-Watt",xlab="Date",ylab="Sales")
+
