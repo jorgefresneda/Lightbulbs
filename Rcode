@@ -6,6 +6,35 @@ data4
 
 plot(data4$Unix,data4$Sales,type="l",main="Philips 432211 19-watt (100-Watt) A21 LED 2700K",xlab="Date",ylab="Sales")
 
+	##Adding Price
+
+	par(new=TRUE)
+
+	plot(data4$Unix,data4$Price,type="l",lty=3,xlab="",ylab="",yaxt='n')
+
+		###Add reviews
+
+		abline(v=1424476800,untf=FALSE,lty=5);abline(v=1424131200,untf=FALSE,lty=5)
+
+	legend("topleft",c("Sales","Price"), cex=0.8, lty=c(1,3))
+
+	##Instead of Price, Price_var
+
+	par(new=TRUE)
+
+	plot(data4$Unix,data4$Price_var,type="l",lty=5,xlab="",ylab="",yaxt='n')
+
+		###Add reviews
+
+		abline(v=1424476800,untf=FALSE,lty=3);abline(v=1424131200,untf=FALSE,lty=3)
+
+	legend("topleft",c("Sales","Price Var"), cex=0.8, lty=c(1,5))
+
+
+#Calculate correlations
+
+cor(data4[c(4,6,7)])
+
 
 
 #Product 2
@@ -25,6 +54,36 @@ data10<-read.table(file="C:\\Users\\Owner\\Desktop\\Dropbox\\OR\\David Gefen\\Li
 data10
 
 plot(data10$Unix,data10$Sales,type="l",main="GE Lighting 76612 Reveal 40-Watt",xlab="Date",ylab="Sales")
+
+	##Adding Price
+
+	par(new=TRUE)
+
+	plot(data10$Unix,data10$Price,type="l",lty=3,xlab="",ylab="",yaxt='n')
+
+		###Add reviews
+
+		abline(v=1424563200,untf=FALSE,lty=5);abline(v=1423612800,untf=FALSE,lty=5)
+
+	legend("topleft",c("Sales","Price"), cex=0.8, lty=c(1,3))
+
+	##Instead of Price, Price_var
+
+	par(new=TRUE)
+
+	plot(data10$Unix,data10$Price_var,type="l",lty=5,xlab="",ylab="",yaxt='n')
+
+		###Add reviews
+
+		abline(v=1424563200,untf=FALSE,lty=3);abline(v=1423612800,untf=FALSE,lty=3)
+
+	legend("topleft",c("Sales","Price Var"), cex=0.8, lty=c(1,5))
+
+
+#Calculate correlations
+
+cor(data10[c(4,6,7)])
+
 
 
 
