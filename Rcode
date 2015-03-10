@@ -247,3 +247,121 @@ data16$Unix<-as.POSIXct(data16$Unix,origin="1970-01-01")
 
 plot(data16$Unix,data16$Sales,type="l",main="Sunlite 40A/R/2PK Incandescent 40-Watt",xlab="Date",ylab="Sales")
 
+
+
+
+#########################################################################################################################
+
+### This is only work-in-progress code for product 1 ###
+
+
+data<-read.table(file="C:\\Users\\jef78\\Desktop\\datap1.txt", sep="\t", header=TRUE)
+
+data
+
+data$Unix<-as.POSIXct(data$Unix,origin="1970-01-01")
+
+plot(data$Unix,data$Sales,type="l",main="150W LED Light Bulb, 20W 1950 Lumens",xlab="Date",ylab="Sales")
+
+
+
+# Alternative plotting (short version from irregular time series)
+
+library(tseries)
+
+serie1<-irts(data$Unix,data$Sales) #coerce the two columns
+
+is.irts(serie1)
+
+plot(serie1)
+
+
+
+
+# Identifying data as time series
+
+serie2<-ts(data$Sales,start=c(1,1),frequency=24)
+
+serie2
+
+	## Plotting as time series
+
+plot.ts(serie2)
+
+acf(serie2,lag.max=190)
+
+pacf(serie2)
+
+spectrum(serie2)
+
+
+	## Applying filter to get rid of seasonality
+
+filteredserie2<-filter(serie2,c(1/2,rep(1,11),1/2)/24)
+
+lines(filteredserie2)
+
+
+		### Diagnostics suggest an AR() model
+
+result4<-ar(serie2)
+
+result4
+
+PP.test(serie2)
+
+		### Phillips-Perron test suggest serie is stationary
+
+result41<-stl(serie2,"periodic")
+
+residual<-result41$time.series[,3]
+
+par(mfrow=c(1,2))
+
+plot(serie2)
+
+hist(residual)
+
+ks.test(residual,"pnorm",mean(residual),sd(residual))
+
+		### p-value indicates does not pass this test
+
+
+library(TSA)
+
+McLeod.Li.test(y=serie2,gof.lag=50)
+
+
+result1<-auto.arima(serie2)
+
+result1
+
+tsdiag(result1,0.1,gof.lag=10)
+
+		### Ljung-Box indicates good adjust only at the beginning
+
+x.ma <- arima(serie2, order = c(0, 0, 12))
+
+x.ma
+
+
+
+# Loop to find best model fit
+
+best.order <- c(0, 0, 0)
+best.aic <- Inf
+for (i in 0:14) for (j in 0:14) {
+fit.aic <- AIC(arima(resid(serie2), order = c(i, 0, j)))
+if (fit.aic < best.aic) {
+best.order <- c(i, 0, j)
+best.arma <- arima(resid(serie2), order = best.order)
+best.aic <- fit.aic
+}
+}
+
+
+# Attempt of garch model
+
+library(tseries)
+
+garch(serie2,order=c(1,12))
